@@ -1,0 +1,12 @@
+project: savantenvs/can-utils
+target: parse-canframe
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/parse-canframe/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_parse_canframe
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/parse-canframe/parse-canframe.dict
+    timeout: 5

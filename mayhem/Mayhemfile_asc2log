@@ -1,0 +1,10 @@
+project: savantenvs/can-utils
+target: asc2log
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/asc2log/testsuite
+
+cmds:
+  - cmd: /mayhem/asc2log-fuzz -I @@
+    timeout: 5
